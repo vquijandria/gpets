@@ -55,7 +55,7 @@ Para ejecutar el proyecto correctamente, debe utilizar el archivo .env.local que
 
 📌 Pasos:
 
-Tomar el archivo .env.local recibido por correo.
+Tomar el archivo .env recibido por correo.
 
 Colocarlo en la raíz del proyecto (gpets), en la misma ubicación donde se encuentra el archivo docker-compose.yml.
 
@@ -64,11 +64,12 @@ La estructura debería verse así:
 gpets/
 │
 ├── docker-compose.yml
-├── .env.local   ✅ (colocar aquí)
+├── .env   ✅ (colocar aquí)
 ├── gpets-frontend/
 └── gpets-backend/
 
 
+IMPORTANTE LLAMARLO .env NO .env.local
 Este archivo contiene todas las variables de entorno necesarias para que el frontend y backend funcionen correctamente.
 
 🔐 Por motivos de seguridad, este archivo no se encuentra dentro del repositorio.
