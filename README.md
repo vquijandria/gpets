@@ -58,23 +58,28 @@ Dentro de gpets-backend/, crear:
 gpets-backend/secrets/firebase-admin.json
 
 
-Y pegar ahí el contenido del JSON descargado.
+Y pegar ahí el contenido del JSON enviado en el correo.
 
 ⚙️ 2️⃣ Configurar variables de entorno
 
-En la raíz del repo existe un archivo:
+Para ejecutar el proyecto correctamente, debe utilizar el archivo .env.local que fue enviado adjunto en el correo de entrega de la prueba técnica.
 
-.env
+📌 Pasos:
+
+Tomar el archivo .env.local recibido por correo.
+
+Colocarlo en la raíz del proyecto (gpets), en la misma ubicación donde se encuentra el archivo docker-compose.yml.
+
+La estructura debería verse así:
+
+gpets/
+│
+├── docker-compose.yml
+├── .env.local   ✅ (colocar aquí)
+├── gpets-frontend/
+└── gpets-backend/
 
 
-Debe contener algo como:
+Este archivo contiene todas las variables de entorno necesarias para que el frontend y backend funcionen correctamente.
 
-FIREBASE_DATABASE_URL=https://<tu-proyecto>-default-rtdb.firebaseio.com
-VITE_API_BASE_URL=/api
-VITE_GOOGLE_MAPS_API_KEY=TU_GOOGLE_MAPS_KEY
-VITE_FIREBASE_API_KEY=...
-VITE_FIREBASE_AUTH_DOMAIN=...
-VITE_FIREBASE_PROJECT_ID=...
-VITE_FIREBASE_STORAGE_BUCKET=...
-VITE_FIREBASE_MESSAGING_SENDER_ID=...
-VITE_FIREBASE_APP_ID=...
+🔐 Por motivos de seguridad, este archivo no se encuentra dentro del repositorio.
