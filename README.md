@@ -28,21 +28,10 @@ Leer/escribir en Firebase Realtime Database
 
 Este archivo NO está en el repositorio por seguridad.
 
-Paso 1 – Descargar el Service Account
 
-Ir a 👉 https://console.firebase.google.com
 
-Abrir tu proyecto
 
-⚙️ Project Settings
-
-Ir a la pestaña Service Accounts
-
-Click en Generate new private key
-
-Descargar el archivo JSON
-
-Paso 2 – Crear carpeta de secrets
+ Crear carpeta de secrets
 
 En la raíz del repo:
 
