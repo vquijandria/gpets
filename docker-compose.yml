@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./gpets-backend
+    ports:
+      - "8080:8080"
+    environment:
+      FIREBASE_CREDENTIALS_PATH: /secrets/firebase-admin.json
+      FIREBASE_DATABASE_URL: ${FIREBASE_DATABASE_URL}
+    volumes:
+      - ./gpets-backend/secrets:/secrets:ro
+
+  frontend:
+    build:
+      context: ./gpets-frontend
+      args:
+        VITE_FIREBASE_API_KEY: ${VITE_FIREBASE_API_KEY}
+        VITE_FIREBASE_AUTH_DOMAIN: ${VITE_FIREBASE_AUTH_DOMAIN}
+        VITE_FIREBASE_PROJECT_ID: ${VITE_FIREBASE_PROJECT_ID}
+        VITE_FIREBASE_STORAGE_BUCKET: ${VITE_FIREBASE_STORAGE_BUCKET}
+        VITE_FIREBASE_MESSAGING_SENDER_ID: ${VITE_FIREBASE_MESSAGING_SENDER_ID}
+        VITE_FIREBASE_APP_ID: ${VITE_FIREBASE_APP_ID}
+        VITE_FIREBASE_DATABASE_URL: ${VITE_FIREBASE_DATABASE_URL}
+        VITE_API_BASE_URL: /api
+        VITE_GOOGLE_MAPS_API_KEY: ${VITE_GOOGLE_MAPS_API_KEY}
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
